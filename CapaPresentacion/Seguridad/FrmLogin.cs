@@ -103,7 +103,7 @@ namespace CapaPresentacion.Seguridad
                     }
                     else
                     {
-                        msgError("Usuario o Contraseña incorrecta. \n    Intente de nuevo.");
+                        msgError("Usuario o Contraseña incorrecta.");
                         txtpass.Text = "Password";
                         txtpass.UseSystemPasswordChar = false;
                         txtuser.Focus();

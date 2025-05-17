@@ -39,6 +39,7 @@
             this.btnMinimizar = new System.Windows.Forms.PictureBox();
             this.btnLogin = new FontAwesome.Sharp.IconButton();
             this.lblErrorMessage = new System.Windows.Forms.Label();
+            this.LOGIN = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
             this.SuspendLayout();
@@ -157,12 +158,23 @@
             this.lblErrorMessage.ForeColor = System.Drawing.Color.DarkGray;
             this.lblErrorMessage.Image = ((System.Drawing.Image)(resources.GetObject("lblErrorMessage.Image")));
             this.lblErrorMessage.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblErrorMessage.Location = new System.Drawing.Point(272, 167);
+            this.lblErrorMessage.Location = new System.Drawing.Point(272, 179);
             this.lblErrorMessage.Name = "lblErrorMessage";
             this.lblErrorMessage.Size = new System.Drawing.Size(146, 22);
             this.lblErrorMessage.TabIndex = 9;
             this.lblErrorMessage.Text = "   Mensaje Error";
             this.lblErrorMessage.Visible = false;
+            // 
+            // LOGIN
+            // 
+            this.LOGIN.AutoSize = true;
+            this.LOGIN.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LOGIN.ForeColor = System.Drawing.Color.DarkGray;
+            this.LOGIN.Location = new System.Drawing.Point(416, 29);
+            this.LOGIN.Name = "LOGIN";
+            this.LOGIN.Size = new System.Drawing.Size(128, 39);
+            this.LOGIN.TabIndex = 10;
+            this.LOGIN.Text = "LOGIN";
             // 
             // FrmLogin
             // 
@@ -170,6 +182,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(57)))), ((int)(((byte)(80)))));
             this.ClientSize = new System.Drawing.Size(780, 330);
+            this.Controls.Add(this.LOGIN);
             this.Controls.Add(this.lblErrorMessage);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
@@ -206,5 +219,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label lblErrorMessage;
+        private System.Windows.Forms.Label LOGIN;
     }
 }
