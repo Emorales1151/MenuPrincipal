@@ -38,6 +38,7 @@
             this.btnCerrar = new System.Windows.Forms.PictureBox();
             this.btnMinimizar = new System.Windows.Forms.PictureBox();
             this.btnLogin = new FontAwesome.Sharp.IconButton();
+            this.lblErrorMessage = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
             this.SuspendLayout();
@@ -147,6 +148,21 @@
             this.btnLogin.TabIndex = 1;
             this.btnLogin.Text = "ACCEDER";
             this.btnLogin.UseVisualStyleBackColor = false;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
+            // 
+            // lblErrorMessage
+            // 
+            this.lblErrorMessage.AutoSize = true;
+            this.lblErrorMessage.Font = new System.Drawing.Font("MS Reference Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblErrorMessage.ForeColor = System.Drawing.Color.DarkGray;
+            this.lblErrorMessage.Image = ((System.Drawing.Image)(resources.GetObject("lblErrorMessage.Image")));
+            this.lblErrorMessage.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblErrorMessage.Location = new System.Drawing.Point(272, 167);
+            this.lblErrorMessage.Name = "lblErrorMessage";
+            this.lblErrorMessage.Size = new System.Drawing.Size(146, 22);
+            this.lblErrorMessage.TabIndex = 9;
+            this.lblErrorMessage.Text = "   Mensaje Error";
+            this.lblErrorMessage.Visible = false;
             // 
             // FrmLogin
             // 
@@ -154,6 +170,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(57)))), ((int)(((byte)(80)))));
             this.ClientSize = new System.Drawing.Size(780, 330);
+            this.Controls.Add(this.lblErrorMessage);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.linkLabel1);
@@ -163,6 +180,7 @@
             this.Controls.Add(this.btnMinimizar);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.Panel1);
+            this.ForeColor = System.Drawing.Color.DarkGray;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmLogin";
             this.Opacity = 0.9D;
@@ -187,5 +205,6 @@
         private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label lblErrorMessage;
     }
 }

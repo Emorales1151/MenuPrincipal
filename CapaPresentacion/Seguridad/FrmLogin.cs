@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using CapaPresentacion.Presentacion;
 
 namespace CapaPresentacion.Seguridad
 {
@@ -83,5 +84,48 @@ namespace CapaPresentacion.Seguridad
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            if (txtuser.Text != "Username" && txtuser.TextLength > 2)
+            {
+                if (txtpass.Text != "Password")
+                {
+                    UserModel user = new UserModel();
+                    var validLogin = user.LoginUser(txtuser.Text, txtpass.Text);
+                    if (validLogin == true)
+                    {
+                        FrmMenuPrincipal mainMenu = new FrmMenuPrincipal();
+                        MessageBox.Show("Bienvenido " + UserCache.NombreUsuario + ", " + UserCache.Rol);
+                        mainMenu.Show();
+                        mainMenu.FormClosed += Logout;
+                        this.Hide();
+                    }
+                    else
+                    {
+                        msgError("Usuario o Contraseña incorrecta. \n    Intente de nuevo.");
+                        txtpass.Text = "Password";
+                        txtpass.UseSystemPasswordChar = false;
+                        txtuser.Focus();
+                    }
+                }
+                else msgError("Please enter password.");
+            }
+            else msgError("Please enter username.");
+        }
+        private void msgError(string msg)
+        {
+            lblErrorMessage.Text = "    " + msg;
+            lblErrorMessage.Visible = true;
+        }
+        private void Logout(object sender, FormClosedEventArgs e)
+        {
+            txtpass.Text = "Password";
+            txtpass.UseSystemPasswordChar = false;
+            txtuser.Text = "Username";
+            lblErrorMessage.Visible = false;
+            this.Show();
+        }
     }
+    
 }
